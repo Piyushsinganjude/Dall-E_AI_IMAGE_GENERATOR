@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 
 import { card, FormField, Loader } from '../components';
 
-const Rendercards = ({ data, title }) => {
+const RenderCards = ({ data, title }) => {
   if (data?.length > 0) {
     return (
       data.map((post) => <card key={post._id} {...post} />)
@@ -93,12 +93,12 @@ const Home = () => {
             )}
             <div className="grid lg:grid-cols-4 sm:grid-cols-3 xs:grid-cols-2 grid-cols-1 gap-3">
               {searchText ? (
-                <Rendercards
+                <RenderCards
                   data={searchedResults}
                   title="No Search Results Found"
                 />
               ) : (
-                <Rendercards
+                <RenderCards
                   data={allPosts}
                   title="No Posts Yet"
                 />
